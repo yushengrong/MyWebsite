@@ -4,7 +4,6 @@
       <Banner></Banner>
       <NewsShow></NewsShow>
     </div>
-
     <div class="content">
       <div class="content-left">
         <List></List>
@@ -16,6 +15,7 @@
     <div class="foot-box">
       <Footer></Footer>
     </div>
+    <BackWebTop></BackWebTop>
   </div>
 </template>
 
@@ -25,6 +25,7 @@ import NewsShow from '@/components/NewsShow.vue';
 import List from '@/components/List.vue'
 import RightPart from "@/components/RightPart.vue";
 import Footer from "@/components/Footer.vue";
+import BackWebTop from "@/components/BackWebTop.vue";
 export default {
   name: "Home",
   components:{
@@ -32,7 +33,8 @@ export default {
     NewsShow,
     List,
     RightPart,
-    Footer
+    Footer,
+    BackWebTop
   }
 }
 </script>
