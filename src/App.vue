@@ -1,16 +1,16 @@
 <template>
-  <HelloWorld></HelloWorld>
-  <Home></Home>
+  <website-top></website-top>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from '@/components/WebsiteTop.vue'
+import WebsiteTop from '@/components/WebsiteTop.vue'
 import Home from '@/views/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    WebsiteTop,
     Home
   }
 }

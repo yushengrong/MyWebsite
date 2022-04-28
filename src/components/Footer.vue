@@ -15,7 +15,7 @@
             <li>热门标签</li>
           </ul>
         </div>
-        <div class="inner-item">
+        <div class="inner-item inner-item2">
           <div class="inner-item-title">
             <p>友情链接</p>
           </div>
@@ -74,6 +74,9 @@ export default {
               line-height: 36px;
             }
           }
+        }
+        .inner-item2{
+          padding-left: 100px;
         }
       }
     }

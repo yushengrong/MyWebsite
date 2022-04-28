@@ -1,35 +1,80 @@
 <template>
-
-  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <el-sub-menu index="1">
-      <template #title>首页</template>
-      <el-menu-item index="1-1">首页1</el-menu-item>
-    </el-sub-menu>
-    <el-sub-menu index="2">
-      <template #title>我的工作台</template>
-      <el-menu-item index="2-1">选项1</el-menu-item>
-      <el-menu-item index="2-2">选项2</el-menu-item>
-      <el-menu-item index="2-3">选项3</el-menu-item>
-      <el-menu-item index="2-4">选项4</el-menu-item>
-    </el-sub-menu>
-    <el-menu-item index="3">订单管理</el-menu-item>
-  </el-menu>
+<!--  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router="ture" @select="handleSelect">-->
+<!--    <el-menu-item v-for="(item,id) in menuList">-->
+<!--      <router-link to="item.path" @click="skip(id)">{{item.value}}</router-link>-->
+<!--    </el-menu-item>-->
+<!--    <el-menu-item index="/information">动画</el-menu-item>-->
+<!--    <el-menu-item index="3">游戏</el-menu-item>-->
+<!--    <el-menu-item index="4">cosplay</el-menu-item>-->
+<!--    <el-menu-item index="5">展会</el-menu-item>-->
+<!--  </el-menu>-->
+  <ul class="menu-list">
+    <li v-for="(item,index) in menuList">
+        <router-link @click="skip(index)" :to="{path:item.path}" :route="{params:{id:item.id}}">{{item.value}}</router-link>
+    </li>
+  </ul>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
-    return {activeIndex: '1'}
+    return {
+      activeIndex: '1',
+      menuList:[
+        {
+          value:"首页",
+          path:"/home",
+          id:1
+        },
+        {
+          value: "资讯",
+          path: "/information",
+          id:2
+        },
+        {
+          value: "动画",
+          path: "/information",
+          id:3
+        },
+        {
+          value: "展会",
+          path: "/information",
+          id:4
+        }
+      ]
+    }
   },
   methods: {
-    handleSelect(key, keyPath) {
+    handleSelect(key) {
       console.log(key, keyPath)
+    },
+    skip(index) {
+      this.$store.state.currentIndex = index
+      console.log(index);
+      this.$store.state.menuList = this.menuList
     }
   },
 }
 </script>
 
-<style>
+<style scoped lang="less">
 .el-menu{
   border: none;
+}
+.menu-list{
+  display: flex;
+  li{
+    list-style: none;
+    a{
+      padding: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: #6b778c;
+    }
+    .router-link-active{
+      color: plum;
+      border-bottom: 2px solid plum;
+    }
+  }
 }
 </style>

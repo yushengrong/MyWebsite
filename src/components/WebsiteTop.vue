@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Navigation from "./Navigation.vue";
+import Navigation from "@/components/Navigation.vue";
 export default {
-  name: 'HelloWorld',
+  name: 'website',
   components:{
     Navigation
   }
