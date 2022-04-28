@@ -16,7 +16,7 @@ const router = createRouter({
             name: Home
         },
         {
-            path:'/information/:id',
+            path:'/information',
             component:Information
         }
     ]

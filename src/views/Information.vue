@@ -43,14 +43,11 @@ export default {
   },
   mounted(){
     this.navTypeCode = this.$store.state.currentIndex
-    console.log(this.navTypeCode);
-    this.navList = this.$store.state.menuList
-    console.log(this.navList);
-    this.title = this.navList[this.navTypeCode].value
   },
   data(){
     return{
       title:null,
+      titleList:[''],
       navTypeCode:null,
       navList:[],
       typeList:[

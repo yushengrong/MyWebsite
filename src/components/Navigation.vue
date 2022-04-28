@@ -30,16 +30,6 @@ export default {
           value: "资讯",
           path: "/information",
           id:2
-        },
-        {
-          value: "动画",
-          path: "/information",
-          id:3
-        },
-        {
-          value: "展会",
-          path: "/information",
-          id:4
         }
       ]
     }
